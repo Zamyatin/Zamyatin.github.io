@@ -10,7 +10,7 @@ margin: 0 auto;
 
 #leftbar  {
   float: left;
-  width: 200px;
+  width: 250px;
   display: fixed;
 }
 
@@ -23,8 +23,8 @@ margin: 0 auto;
 
 #headshot {
   margin-top: 200px;
-  height: 296px;
-  width: 200px;
+  height: 251px;
+  width: 250px;
   display:relative;
 }
 
