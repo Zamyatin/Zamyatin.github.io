@@ -1,6 +1,7 @@
 div {
 	/* standard boxing for divs */
 	border: 1px solid black;
+  border-radius: 5px
 }
 
 #container {
@@ -10,12 +11,13 @@ margin: 0 auto;
 
 #leftbar  {
   float: left;
+  height: 750px;
   width: 250px;
   display: fixed;
 }
 
 #navbar {
-  margin-top: 30px;
+  margin-top: 20px;
   height:158px;
   width: 125px;
   display: relative;
@@ -40,7 +42,7 @@ width: 480px;
 }
 
 #righttop {
-  margin-top: 50px;
+  margin-top: 20px;
   height: 250px;
   width:250px;
   display: relative;
@@ -79,6 +81,7 @@ display: relative;
   width: 125px;
   display:block;
   border: 1px solid blue;
+  text-align: center;
 }
 
 .pics {
