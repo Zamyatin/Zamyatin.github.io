@@ -38,6 +38,7 @@ margin: 0 auto;
   width: 250px;
   z-index: 1;
   position: fixed;
+  text-align: center;
 }
 
 #main {
@@ -105,8 +106,10 @@ margin: 1em;
 }
 
 .round-button {
-  width: 8%;
+  width: 10%;
   height: 0;
+  margin: 2px auto 2px auto;
+  vertical-align: top;
   padding-bottom: 10%;
   border-radius: 50%;
   border: 2px solid #f5f5f5;
@@ -118,4 +121,11 @@ margin: 1em;
 
 .round-button:hover {
     background: #262626;
+}
+
+.round-button img {
+  display: inline-block;
+  width: 76%;
+  padding: 12%;
+  height: auto;
 }
