@@ -1,11 +1,11 @@
 div {
 	/* standard boxing for divs */
 	border: 1px solid black;
-  border-radius: 5px
+  border-radius: 10px
 }
 
 #container {
-width: 980px;
+width: 90%;
 margin: 0 auto;
 }
 
@@ -13,67 +13,78 @@ margin: 0 auto;
   float: left;
   height: 750px;
   width: 250px;
-  display: fixed;
+  position: fixed;
 }
 
 #navbar {
   margin-top: 20px;
   height:158px;
   width: 125px;
-  display: relative;
+  z-index: 1;
+  position: fixed;
 }
 
 #headshot {
-  margin-top: 200px;
+  margin-top: 375px;
   height: 251px;
   width: 250px;
-  display:relative;
+  z-index: 1;
+  position: fixed;
+}
+
+#social {
+  margin-top: 325px;
+  height: 50px;
+  width: 250px;
+  z-index: 1;
+  position: fixed;
 }
 
 #main {
 float: left;
 width: 480px;
+/*position: relative;*/
 }
 
 #rightbar {
   float: right;
   width: 250px;
-  display: fixed;
+  /*position: relative;*/
 }
 
 #righttop {
   margin-top: 20px;
   height: 250px;
   width:250px;
-  display: relative;
+  /*position: relative;*/
 }
 
 #search {
   margin-top: 10px;
   height: 20px;
   width: 250px;
-  display: relative;
+  /*position: relative;*/
 }
 
 #recents {
 margin-top: 20px;
 height: 197px;
 width: 250px;
-display: relative;
+/*position: relative;*/
 }
 
 #comments {
   margin-top: 20px;
   height: 250px;
   width: 250px;
-  display: relative;
+  /*position: relative;*/
 }
 
 #picbox {
   margin-top: 20px;
   height: 250px;
   width: 250px;
-  display: relative;
+  /*position: relative;*/
 }
 
 .navbut {
@@ -82,6 +93,8 @@ display: relative;
   display:block;
   border: 1px solid blue;
   text-align: center;
+  background-color: grey;
+  opacity: .8;
 }
 
 .pics {
@@ -89,4 +102,10 @@ display: inline-block;
 height: 35px;
 width: 35px;
 margin: 1em;
+}
+
+.cirlce_button {
+  height: 20px;
+  width: 20px;
+  rad
 }
