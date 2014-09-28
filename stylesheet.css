@@ -125,6 +125,7 @@ margin: 1em;
 
 .round-button img {
   display: inline-block;
+  vertical-align: auto;
   width: 76%;
   padding: 12%;
   height: auto;
