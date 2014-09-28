@@ -121,12 +121,13 @@ margin: 1em;
 
 .round-button:hover {
     background: #262626;
+    border: 2px solid #f8a430;
 }
 
-.round-button img {
+/*.round-button img {
   display: inline-block;
   vertical-align: auto;
   width: 76%;
   padding: 12%;
   height: auto;
-}
+}*/
