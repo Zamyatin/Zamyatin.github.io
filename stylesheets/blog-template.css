@@ -34,6 +34,11 @@ body {
   background-color: #9CD0FF;
 }
 
+p.nav:hover {
+  text-decoration: underline;
+  color:#FFD22F;
+}
+
 #bodywrap {
   position: relative;
   background-color: #FFF6D5;
