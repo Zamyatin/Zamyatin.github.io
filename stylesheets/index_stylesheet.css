@@ -1,120 +1,28 @@
-div {
-	/* standard boxing for divs */
-	border: 1px solid black;
-  border-radius: 10px
-}
-
 body {
-  background-color: white;
+  background-color: black;
 }
 
-
-#leftbar  {
-  width: 250px;
-  left: 0;
-  background: #FFD77F;
-  position:fixed;
-}
-
-#content {
-  width: 700px;
-  height: 100%;
-  background: #933;
+#header {
+  height: 75px;
+  width: 900px;
+  position: fixed;
+  top: 0;
   left: 50%;
-  top: 50px;
-  margin-left: -350px;
-  display: inline-block;
-  position: absolute;
-}
-
-#rightbar {
-  width: 250px;
-  right: 0px;
-  position:fixed;
-}
-
-#navbar {
-  margin-top: 20px;
-  height:158px;
-  width: 125px;
-  z-index: 1;
-}
-
-#headshot {
-  top: 375px;
-  height: 251px;
-  width: 250px;
-  z-index: 1;
-  position: absolute;
+  margin-left: -453px;
+  z-index: 2;
+  border: 3px solid #CC6A08;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  overflow: hidden;
+  background-color: #B2B2B2;
 }
 
 #social {
-  top: 325px;
   height: 50px;
-  width: 250px;
+  width: 300px;
+  margin-left: 634px;
+  margin-top: 36px;
   z-index: 1;
-  position: absolute;
-
-}
-
-#righttop {
-  margin-top: 20px;
-  height: 250px;
-  width:250px;
-  background-color: #FFD77F;
-  position: relative;
-}
-
-#search {
-  margin-top: 10px;
-  height: 20px;
-  width: 250px;
-  background-color: white;
-  border: 2px solid black;
-  text-align: center;
-  position: relative;
-}
-
-#recents {
-margin-top: 20px;
-height: 197px;
-width: 250px;
-background-color: #FFD77F;
-position: relative;
-}
-
-#comments {
-  margin-top: 20px;
-  height: 250px;
-  width: 250px;
-  background-color: #FFD77F;
-  position: relative;
-}
-
-#picbox {
-  margin-top: 20px;
-  height: 250px;
-  width: 250px;
-  background-color: #FFD77F;
-  position: relative;
-}
-
-.navbut {
-  height: 30px;
-  width: 125px;
-  display:block;
-  border: 1px solid blue;
-  text-align: center;
-  background-color: white;
-  border-width: 4px solid #51B202;
-  opacity: .9;
-}
-
-.pics {
-display: inline-block;
-height: 35px;
-width: 35px;
-margin: 1em;
 }
 
 .round-button {
@@ -125,12 +33,139 @@ margin: 1em;
   border-radius: 50%;
   border: 2px solid #f5f5f5;
   overflow: hidden;
-  background: #464646;
-  box-shadow: 0 0 3px blue;
   display: inline-block;
 }
 
 .round-button:hover {
-  background: #262626;
-  border: 2px solid #f8a430;
+  border: 2px solid #39FF50;
+}
+
+#wrapper {
+  width: 900px;
+  margin: 100px auto;
+  border: 3px solid #CC6A08;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  overflow: hidden;
+}
+
+#leftbar  {
+  height: 100%;
+  width: 150px;
+  display: inline-block;
+  background-color: #B2B2B2;
+  border: 1px solid #CC6A08;
+}
+
+#content {
+  height: 100%;
+  width: 550px;
+  display: inline-block;
+  background-color: #B2B2B2;
+  border: 1px solid #CC6A08;
+}
+
+.entry {
+  position: absolute;
+  display: block;
+}
+.title {
+  height: 25px;
+  width: 550px;
+  margin: 0 auto;
+  font-size: 24px;
+  color: white;
+  font-family: Garamond;
+  text-align: center;
+}
+
+.article {
+  height: 300px;
+  width: 550px;
+  margin: 25 auto;
+  font-size: 16px;
+  color: white;
+  font-family: Garamond;
+}
+
+#rightbar {
+  height: 100%;
+  width: 186px;
+  display: inline-block;
+  background-color: #B2B2B2;
+  border: 1px solid #CC6A08;
+}
+
+#navbar {
+  height:280px;
+  width: 120px;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#headshot {
+  height: 151px;
+  width: 150px;
+  margin-top: 300px;
+  z-index: 1;
+  position: absolute;
+}
+
+.navbut {
+  height: 30px;
+  width: 120px;
+  display: block;
+  margin: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: center;
+  background-color: #16B228;
+}
+
+.navbut p {
+  font-size: 24px;
+  color: white;
+  font-family: Garamond;
+}
+
+#righttop {
+  height: 250px;
+  width:186px;
+  position: absolute;
+}
+
+#search {
+  margin-top: 10px;
+  height: 20px;
+  width: 183px;
+  background-color: white;
+  border: 2px solid #CC6A08;
+  text-align: center;
+  border-radius: 10px;
+  font-family: Garamond;
+}
+
+#recents {
+  margin-top: 20px;
+  height: 300px;
+  width: 180px;
+  background-color: #16B228;
+  border-radius: 10px;
+  border: 1px solid #CC6A08;
+  color: white;
+  font-family: Garamond;
+  padding-left: 5px;
+}
+
+#comments {
+  margin-top: 20px;
+  height: 250px;
+  width: 180px;
+  background-color: #16B228;
+  border-radius: 10px;
+  border: 1px solid #CC6A08;
+  color: white;
+  font-family: Garamond;
+  padding-left: 5px
 }
