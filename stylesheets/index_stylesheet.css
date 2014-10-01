@@ -57,6 +57,36 @@ body {
   border: 1px solid #CC6A08;
 }
 
+#navbar {
+  height:280px;
+  width: 120px;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.navbut {
+  height: 30px;
+  width: 120px;
+  display: block;
+  margin: 0 auto;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: center;
+  background-color: #16B228;
+}
+
+.navbut p {
+  font-size: 24px;
+  color: white;
+  font-family: Garamond;
+}
+
+.navbut:hover p {
+  color: #39FF50;
+  /*border: 2px solid #39FF50;*/
+}
+
 #content {
   height: 100%;
   width: 550px;
@@ -69,6 +99,7 @@ body {
   position: absolute;
   display: block;
 }
+
 .title {
   height: 25px;
   width: 550px;
@@ -96,37 +127,14 @@ body {
   border: 1px solid #CC6A08;
 }
 
-#navbar {
-  height:280px;
-  width: 120px;
-  position: absolute;
-  z-index: 1;
-  overflow: hidden;
-}
-
 #headshot {
   height: 151px;
   width: 150px;
   margin-top: 300px;
+  border-radius: 10px;
   z-index: 1;
   position: absolute;
-}
-
-.navbut {
-  height: 30px;
-  width: 120px;
-  display: block;
-  margin: 0;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  text-align: center;
-  background-color: #16B228;
-}
-
-.navbut p {
-  font-size: 24px;
-  color: white;
-  font-family: Garamond;
+  overflow: hidden;
 }
 
 #righttop {
