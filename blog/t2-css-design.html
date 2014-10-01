@@ -1,0 +1,67 @@
+<html>
+  <head>
+   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-template.css">
+   <title>Raj's Blog</title>
+  </head>
+<body>
+  <div id="headerwrap">
+    <div id="header">
+    <p class="title">Header</p>
+    </div>
+    <div id="nav">
+    <p class="nav">Home - About</p>
+    </div>
+  </div>
+  <div id="bodywrap">
+    <div class="datetitle">
+      <p>Understanding CSS Positioning</p>
+      <p>October 1, 2014 - Raj Singh</p>
+    </div>
+    <div id="content">
+      <p>So, after about 30 hours struggling to understand CSS positioning, I feel it's fair to do a quick write-up on what I've learned.  Honestly, there are probably going to be some errors, so this is by no means a reference guide.  Rather, it's maybe yet another way to read and process what CSS positioning involves, and what the terminology refers to.  Personally, I had struggled to understand the <em>numerous</em> definitions, examples, etc that are concocted all over the net. </p>
+
+      <p>Obviously, anyone looking for a Definitive Guide should look to the <a href="http://www.w3.org">WorldWide Web Consortium</a>.  I found, however, that the definitions and write-ups on W3 were written with a mixed bag of readers in mind.  At one time they were trying to write definitions to explain what something is (or means, or how it functions), but at the same time, they're offering technical and historical information that really will just confuse a newbie.  I also found <a href="http://www.stackoverflow.com">Stack Overflow</a> to be just another source of confusion - too many people offering too many bits of advice to solve simple problems, led to confusion for the newbie who is trying to read and understand their code, especially without understanding the nuances <em>in</em> their code.</p>
+
+      <p>When I came across <a href="http://www.w3schools.com">W3Schools.com</a>, I found a place where they were clearly newbie focused, offered <em>tons</em> of opportunities to test code and, in a very simple manner, break down the functions of the various CSS Positioning properties.  I highly suggest it, for this site is <em>totally</em> choice.  I'll be going through their tutorials in the next few weeks.</p>
+
+      <p>Anyway, from what I've come to understand, there are a few key things to keep in mind when dealing with positioning elements through a website using CSS:</p>
+
+      <ol>
+      <li><p>Think of the site as a <em>physical</em> document.  Elements are things you're simply cutting out of paper and pasting to that document - just like we did when making "newspapers" or "magazines" as kids in elementary school.</p></li>
+      <li><p>Recognize that, while at one time your document can literally accept cut-and-paste elements on it, because it is a product of <em>code</em>, there is some underlying logic the server and browser <em>must</em> use to deliver the document to your face.  </p></li>
+      <li><p>This logic is <em>linear</em> - your code is read from beginning to end. In terms of HTML, the code is read from top to bottom, and the browser will pay attention to <em>nesting</em> - or elements embedded in other elements. A nested element is an element that begins and ends (identified by the beginning and ending markers of that element) <em>between</em> the beginning/ending markers of previous element.  Nested elements are also called Child elements, as they are children of Parent elements.</p></li>
+      <li><p>Logical Linearity manifests in CSS as a <em>Cascading</em> effect (hence Cascading Style Sheets).  What this means is that a style/effect/whathaveyou placed on an element will cascade down to every other element, until overwritten or negated.  NAMING becomes important - assigning classes or IDs - to indicate which elements receive a style and which do not.</p></li>
+      </ol>
+
+      <p>Now, cutting/pasting and linear logic isn't something that should be new to anyone who's ever done code before, but it's incredibly important to understand for the newbie coder/site designer as we start talking about Positioning through CSS, because, in my mind, the most important aspect of successfully getting your elements in the places you want them is to understand what is meant by <em>Document Flow</em> (a term used constantly in every definition you will find online).</p>
+
+      <p>Document flow is the way the HTML is read by the browser, and the way in which CSS styles are applied to the elements defined in the HTML. Nested elements react differently when using the positioning properties - depending on the positioning property you're choosing, that element can tie itself to the parent element, or to a <em>previous element with a certain property</em>, or disregard document flow <em>entirely</em>, and just place itself relative to the <em>actual browser window</em>. The key properties are:</p>
+
+      <ul>
+      <li>Static Positioning - default positioning for all elements.  Static elements are not affected by top, bottom, left, right properties because they are entirely interested in following the flow of the document.</li>
+      <li>Relative Positioning - Unlike Static Positioning, Relative Positioning will follow the document flow, but can be adjusted using MARGIN properties.  <strong>HOWEVER</strong>, the space that element would <em>normally</em> have (prior to adjustment via MARGINS, or other properties) WILL BE RESERVED for that element.  This property is great for overlapping, but can become seriously confusing if you expect the next element you place in your document to adjust according to how you <em>see</em> your relative element.  You cannot forget that the relative element is still going to take it's "normal" area <strong>PLUS</strong> the area you've defined for it.</li>
+      <li>Absolute Positioning - This property will make the element positioned according to its relationship to the <strong>next non-static parent element</strong>.  If all other parent elements are static, it will attach itself to the HTML tag (which, we can't forget, is an element itself)!  This is good when you're nesting elements and want to control a swath of nested elements with one wrapping element, (I believe).</li>
+      <li>Fixed Positioning - This is probably the most easily approachable property, because visually, it lands exactly where you'd expect it to on a browser window, and sticks there.  Basically, a Fixed element ties itself to no other element AT ALL, but instead draws itself according to the values you assign it (borders, margins, etc) in the browser window.  Commonly used for static headers or footers, navigation bars, etc.</li>
+      </ul>
+
+      <p>In practice (as a total newb), I found that my first thrilling discovery was using <strong>FIXED</strong> positioning. It just made sense.  I could give something a TOP value of 0px, call it fixed, and BOOM! there it is, right at the top of my browser window, stuck for all eternity.  The thing is, stylistically, we create sites that are dynamic, that need to offer a ton of information, and basically, that need to <em>scroll</em>.  Fixed elements will not scroll. AT ALL. They are there, love 'em or leave 'em.  They are great for headers and footers, as I said - but sometimes you have to ask yourself if that Footer with your copyright info and a few social network links <em>really</em> needs to be up in the reader's grill 100% of the time.  Personally, I feel pixels are a commodity, using pixels sparingly to get the most information across is important.</p>
+
+      <p>Also, what I've discovered is that <strong>ABSOLUTE</strong> positioning is fantastic for those spaces where you want a slew of divs to move around as a group.  All you do is <em>wrap</em> those divs in one big parent div (for example), make that parent div <strong>RELATIVE</strong> Remember - ABSOLUTE elements won't pay attention to a STATIC element, they ignore all until the first parent that's non-static.  Yes, that's a mouthful.</p>
+
+      <p>Ultimately, what this means is that there's no one way to skin your cat.  However, layout is a bit more complex than just cut-n-paste, and planning how you embed your elements in other elements is as important and understanding how CSS positioning properties work.  In fact, I would say that a clear understanding of positioning properties <em>inform</em> our choices when we're creating our HTML document <em>flow</em>.</p>
+
+      <p>Finally, I can only assume as with anything else, practice makes perfect. I have to believe (especially given all the arguments I saw on StackOverflow) that developers and designers tend to come up with solutions to design problems which they'll end up using over and over.  There's no need to redesign the wheel. I'm sure these designers <em>also</em> have a favorite style at least partially based on their solutions to design <em>problems</em>.  The influence of external problems (and their solutions) on Art and Design would actually be a pretty interesting study, for sure - and perhaps enlightening given my first experiences here.  </p>
+
+      <p>Ultimately, it's important to really start drilling the relationships between elements and CSS properties into our collective heads. It'll certainly make us faster problem solvers, and start defining us by our preferred solutions, which I think is pretty nifty. :)</p>
+
+    </div>
+    <div class="datetitle">
+    </div>
+    <div id="content">
+    </div>
+ </div>
+  <div id="footer">
+    <p>Copyright 2014</p>
+  </div>
+</body>
+</html>
