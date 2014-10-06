@@ -1,0 +1,34 @@
+<html>
+  <head>
+   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-template.css">
+   <title>Raj's Blog</title>
+  </head>
+<body>
+  <div id="headerwrap">
+    <div id="header">
+    <p class="title">Header</p>
+    </div>
+    <div id="nav">
+    <p class="nav"><a href="http://zamyatin.github.io/blog/index.html">Home</a> - About</p>
+    </div>
+  </div>
+  <div id="bodywrap">
+    <div class="datetitle">
+      <p>Arrays and Hashes: The Datagasm</p>
+      <p>October 4, 2014 - Raj Singh</p>
+    </div>
+    <div id="content">
+      <p>So, what do you do when you have a bunch of information you need to remember later?  Well, like Dr. Jones Sr. points out, "I write it in a book so I don't <em>have</em> to remember!"  Thing is back when we wrote things down in books, we still needed to find the stuff that was pertinent to the things we <em>needed</em> to remember <em>at the time we needed to remember it</em>.  You don't read a whole book every time you need to remember one thing you wrote down in it, do you?  So, since people needed to remember where in a book they wrote down specific information, they started inventing ways to ID <em>where</em> in a book something existed - page numbers, table of contents, chapters, <em>indexes</em>.</p>
+
+      <p>Arrays and hashes are <em>kind</em> of like a combination of the information that we wrote in books, <em>along</em> with the index of that book.  Think of it like this: an Array is basically a list - it can be super long or super short, but's just a list of stuff.  In that sense, there's a <em>first item</em> on the list, as is there a <em>last item</em>.  You'd point to these items programmatically in, say, a 5 item list by writing:  <code>my_list[0]</code> or <code>my_list[5]</code> to hit the last item in that list.  Thing is, in an array, just like a list,  you don't always know exactly how many items are <em>in</em> the list.  <em>Unlike</em> a list, the beauty of computers is that you can logically scroll around an array (imagine you had a list and rolled it up so you could tape the bottom of the page to the top).  NOW you know which is the first on the list <em>and</em> exactly where the last item on that list is, respective to the first.  Where is it?  Why, it's one <em>behind</em> the first!  So, just like on a number line, where the "first" item on that list is in position (it's a programmer thing), the item <em>right before the first</em> would be in position [-1]! Easy!</p>
+
+      <p>A hash is a bit different.  I suppose you'd describe it, to go back to our Dr. Jones' book analogy, like the <em>index</em> that you'd reference against .  Basically a Hash is a <em>Keyed Value-Pair</em>, meaning that there's a "key" (like the word you're looking up in the index), and the "value" is the stuff you're looking for.  So, if we're stuck in the Library in Venice and we need to find the information on that knight in the sewers (rats... why'd there have to be rats...), all we'd need to do in our Hash is to call the Key: <code>:WheresTheKnight</code> and we'd get returned <code>underground with the rats, enjoy!</code>  (Personally, I think rats are cute, so long as they're not found by the dozen and they aren't eating my Peanut Butter Captain Crunch, but we're trying to keep a theme going here).</p>
+
+      <p>Anyway, so the fundamental difference between an Array (list) and a Hash (Indexed Key Pair Value)?  A list is lightweight but hard to navigate for <em>specifics</em>, a Hash is definitely not lightweight, but super-useful when you need to pull specific information quickly.</p>
+    </div>
+ </div>
+  <div id="footer">
+    <p>Copyright 2014</p>
+  </div>
+</body>
+</html>
