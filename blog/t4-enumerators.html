@@ -1,0 +1,51 @@
+<html>
+  <head>
+   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-template.css">
+   <title>Raj's Blog</title>
+  </head>
+<body>
+  <div id="headerwrap">
+    <div id="header">
+    <p class="title">Header</p>
+    </div>
+    <div id="nav">
+    <p class="nav"><a href="http://zamyatin.github.io/blog/index.html">Home</a> - About</p>
+    </div>
+  </div>
+  <div id="bodywrap">
+    <div class="datetitle">
+      <p>Ennumerator Objects in Ruby Totally Rock!</p>
+      <p>Oct 13, 2014 - Raj Singh</p>
+    </div>
+    <div id="content">
+      <p>Here we see that the logical block takes a range of integers and groups them by their modulus(3) value, then applies a key to the output values.  In one of our challenges I was struggling to distribute an array of students into a pre-determined number of teams (keys). At the time I hadn't understood what Enumerables were, and used quite a bit of code to: 1) write the keys (team numbers), 2) shuffle the student name-list(array) 3) inject each name into a key 4) advance the key 5) inject the next name from the list.... and so on and so on.</p>
+
+      <p>In this example, using an Array method such as <code>Array#each_with_index</code> wouldn't work, because the array I was dealing with was an array of <em>students</em> - a list I didn't want to become the <em>keys</em> but rather the <em>values</em>.  This proved to be a coding challenge, because <code>Array#each_with_index</code> didn't like my attempt to loop a key back around to 1 (after 4 teams had one student each) and inject a <em>second</em> value.  With the Enum#group_by class, I don't need to worry.  I can simply shuffle my student list, and group them up with relatively even distribution using a modulus: </p>
+
+      <p><code>(num_of_teams).group_by {|i| i%number_of_people_desired_on_team</code>}</p>
+
+      <p>The added benefit of the Enumerable class is that, without writing a bunch of scaffolding logic, we can execute loops between, say, two arrays, without concern for the length of those arrays - our code will execute and close out cleanly when the Ennumerating objects end.  Extremely useful when trying to merge a large number of arrays into one large dataset, for example: </p>
+
+      <p>``
+      short<em>enum = [1, 2, 3].to</em>enum
+      long<em>enum = [a..z].to</em>enum</p>
+
+      <p>loop{puts "#short<em>enum.next" = "#long</em>enum.next"}
+      ``</p>
+
+      <p>What I mean by "cleanly" in this case, is the output that stops when short_enum runs out of objects:</p>
+
+      <p><code>1 = a</code></p>
+
+      <p><code>2 = b</code></p>
+
+      <p><code>3 = c</code></p>
+
+      <p>Very handy.  We won't have rolling over of <code>short_enum</code>, nor will we have run-on of <code>long_enum</code>.</p>}
+    </div>
+ </div>
+  <div id="footer">
+    <p>Copyright 2014</p>
+  </div>
+</body>
+</html>
