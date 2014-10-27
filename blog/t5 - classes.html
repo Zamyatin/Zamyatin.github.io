@@ -1,0 +1,94 @@
+<html>
+  <head>
+   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-template.css">
+   <title>Raj's Blog</title>
+  </head>
+<body>
+  <div id="headerwrap">
+    <div id="header">
+    <p class="title">Header</p>
+    </div>
+    <div id="nav">
+    <p class="nav"><a href="http://zamyatin.github.io/blog/index.html">Home</a> - About</p>
+    </div>
+  </div>
+  <div id="bodywrap">
+    <div class="datetitle">
+      <p>Getting classy with Classes</p>
+      <p>Oct 27, 2014 - Raj Singh</p</div>
+    </div>
+    <div id="content">
+      <p>As with everything else in Ruby, Classes are Objects. What this means at the most basic level, is that Classes can be created as need arises to deal with just about anything you'd consider an object in real life. </p>
+
+      <p>It seems that the majority of Objects we've created in DBC thus far have been *processors* - they generate data and process that data (and yes, the data has been very thin... so far).  Data, of course, exists in the Ruby environment as an Object just as the machinery to process it.  So, for example if you have an array of data that is context-specific (a credit card number, a Bingo call, etc) one can create a Class designed specifically with the necessary machinery to deal with that data.</p>
+
+      <p>Let's take an example that I'm fairly adept at: Data Management.  In this example we'll create a simple inventory management system for a video game store.  Our data will be stored in a Hash (which seems to me to be the closest thing to a database that I've seen thus far at DBC), and using a few methods from the standard Ruby library, we'll manage our vast inventory of, say... 2 games? :) </p>
+
+      <p>First off when creating a class, you'll want to create an initilizer.  Basically, what we have to understand is that when you're creating a class, you're going to be working with it as an <em>instance</em> of that object.  That means, upon its creation it has to have some parameters. In the case of our game store inventory machine, let's initialize it with some basic data: an array of games avaiable, and an array that we can use to interpret indeces within the games dataset:
+        <pre><code>
+class GameInventory
+
+  def initialize
+    @games_table = %w[title publisher metacritic release_year available_on inventory price]
+    @games = [["Dark Souls II", "Bandai Namco Games", 91, 2014, "PC, PS3, Xbox 360", 5, 35.00],
+            ["Hearthstone: Heroes of Warcraft", "Blizzard", 88, 2014, "PC, iOS", 2, 10.00],
+            ["Mass Effect 3: Citadel", "EA", 84, 2013, "PS3, Xbox 360", 7, 22.55]]
+  end
+        </code></pre>
+      <p>Now that we have an interpreter array (we can call on this to easily find indeces for values throughout the @games array), we can start <em>defining</em> those elements we'd expect to find in an inventory manager: things like the ability to tell us what games we have, how many, what the price is.  Preferably we'd also like them to be able to add and remove games from the shelves, but for brevity's sake we'll just keep it simple for now.  Let's add a lookup tool, so we can ask our inventory manager what items we have with a certain value:
+        <pre> <code>
+  def search_inventory(lookup)
+    lookup = @games_table.index(lookup)
+    return @games.collect{ |x| x[lookup] }
+  end
+        </code> </pre>
+      Basically, all we're doing here is creating a variable <i>lookup</i> and referencing @games_table to get an index.  From here we can lookup from our array any title, critic score, price, etc</p>
+
+      <p>Now, you may have noticed something a little odd about our variables - specifically that we're starting certain variables with an ampersand ("@") sign. Any variable beginning with an amerpsand becomes an <i>instance variable</i> in the defintion of a class.  What that means is that the variable will persist through the instance of that class - very important in the cases where we're dealing with data sets (arrays, hashes, etc) or previously-manipulated data. </p>
+
+      <p>Now, let's ask our inventory manager what our total inventory of games is:
+        <pre><code>
+  def display_inv
+    @games.each{ |n| puts "price: #{n[0]}, publisher: #{n[1]}, metacritic: #{n[2]},
+    release year: #{n[3]}, available_on: #{n[4]}, inventory: #{n[5]}, price: #{n[6]}:"
+  puts  }
+  end
+        </code></pre>
+      Another simple array iteration that lists each item within the multidimensional array.  Granted we're using some string interpolation to name our data.  This could be done more cleanly with a series of symbols... but as we haven't really covered that yet in DBC, I'm not going to attempt it here.
+      </p>
+
+      <p>Finally, let's build a method within the class to add a game (and all its pertinent information) to the games dataset
+        <pre><code>
+  def add_new_game(title, publisher, metacritic, release_year, available_on, inventory, price)
+    @games << [title, publisher, metacritic, release_year, available_on, inventory, price]
+    puts "Please verify new game has been added to database."
+    display_inv
+  end
+end
+        </code></pre>
+      </p>
+
+      <p>You'll notice that along with the "end" on our definition we've also got a non-indented "end" - that's used to close our class.  (Trust me it would look better if this code was all nice and in-line). </p>
+
+      <p> Now that we've done some initial definintion of our inventory manager object-robot-buddy, lets start actually demanding things of him:
+        <pre><code>
+game1 = GameInventory.new
+game1.add_new_game('Dishonored', 'Bethesda', 91, 2012, "PC, PS3, Xbox 360", 1, 35.00)
+game1.search_inventory('title')
+game1.display_inv
+        </code></pre>
+      So what we've done here in the first line is actually create an <i>instance</i>of the inventory manager.  He will have his own inventory array to watch over, and whatever we tell him to do will exist within that instance of the Class "GameInventory".  We could make half a dozen inventory managers, if we wanted to... perhaps useful if we had different stores all logging into the same website to manage their own inventory.  Of course, if this was the case we'd want to save their inventory data <i>outside</i>of the instance when they logged out and closed up shop, then call it up again when the store opened the next day. </p>
+
+      <p>To be honest, I'm still processing the concept of Objects.  Granted we've used them to create games and decipher codes, and for games I can understand why you'd want a single instance - you don't want to start over a new game every time you take a turn - you want the game to <i>persist</i>.  With code-crackers, its a little different story.  You could, technically write a single method that cracks a code, as long as you have some algorithms defined in <i>other</i>methods.</p>
+
+      <p>The case, to me, for Classes-as-Objects, seems to be a case for scalability.  That is, as we begin as students to grap the concept of Object Oriented Programming, we will also start to recognize that our (current) heavy reliance on, say, conditional logic, will become very problematic as our challenges get more difficult and our solutions more complex.  I've already noticed that I can create Class-methods that reduce hugely long case logic with simple one-or-two line processing logic. Even during refactoring I've noticed that it's far easier to identify where something breaks wen you don't have a 30 line conditional method.</p>
+
+      <p>Just as we could continue to "train" our little inventory manager buddy above with new methods - how to control inventory numbers, how to deal with sales, how to distribute games sold online, etc - I'm starting to understand the value of building Classes.  They're effectively tools and machinery to get a job done.  Also, I imagine, in a team environment, embracing OOP and building solid Class objects would prove immensely simpler and less confusing to debug or add features to.</p>
+
+    </div>
+ </div>
+  <div id="footer">
+    <p>Copyright 2014</p>
+  </div>
+</body>
+</html>
