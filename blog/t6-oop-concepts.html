@@ -1,0 +1,49 @@
+<html>
+  <head>
+   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-template.css">
+   <title>Raj's Blog</title>
+  </head>
+<body>
+  <div id="headerwrap">
+    <div id="header">
+    <p class="title">Header</p>
+    </div>
+    <div id="nav">
+    <p class="nav"><a href="http://zamyatin.github.io/blog/index.html">Home</a> - About</p>
+    </div>
+  </div>
+  <div id="bodywrap">
+    <div class="datetitle">
+    <p>Object-Oriented vs Functional Programming - The Magic is in the Scalability</p>
+    <p>Oct 29, 2014 - Raj Singh</p</div>
+		</div>
+    <div id="content">
+    	<p>I have to say that thorugh this week's assignments (and my trials and <em>sometimes</em> tribulations with them), I've found myself really, truly <em>excited</em> with the concepts of OOP, particularly as a style and methodology opposing "functional programming" that I'd been doing in the lead-up to DBC.  To describe functional programming is to describe that type of very step-by-step programming method that everyone learns when we're starting out.  Typically early functional programming tends to be *extremely* reliant on conditionals, "do this, then do that, then do that" thinking.  When I was doing my first few lessons for Ruby on CodeAcademy, for example, I learned about if/then... THEN I learned about case logic. While still a conditional logic, case logic is a clean, easier-to-read, and easier-to-scale way of presenting all the crazy connections I had in my head.  I thought I'd found some kind of programming nirvana, and that I'd eventually be teaching Joshua (my tic-tac-toe pet project) how nobody wins in a game of Global Thermonuclear War.  </p>
+			
+			<p>Man, was I wrong.  Functional programming certainly has its place - without it we wouldn't be writing much of anything - but this week when we started getting challenges to break up our code into even *more* manageable, bite sized methods under the tenets of Object Oriented Programming, well now I'm just awash in ideas for Joshua.  Here's the thing: eventually, as programs get more complicated, your reliance on conditionals and direct logic turns your code base into absurdist comedy - you're repeating yourself 100 times, you've indented half-way across a page, and you're writing 500 lines of code just to decide how to align a 2d array or cycle through a column of that 2d array.  It's nuts, it's ugly, it's basically unreadable <em>even when you're the author</em> after you've gone to sleep and woken up the next morning.  Ridiculous!.  Could you imagine handing in such code to one of your teammates who, let's say, has been charged to build some new functionality into your texty nightmare world?  She'd hate you, for one.  Chances are she'd be constantly asking you why or how something works in her desperate attempt to follow your logic.  Not good.</p>
+			
+			<p>Enter OOP.  Basically the idea here is that we can take all that thought and break it into little objects that do certain individual functions, then make all those little objects talk to each other. In my very beginner level programs we can generate tens of little processors that, like the processor in your computer, are all chittering away, passing information back and forth among each other, doing their little part.  It's like the bottle factory in Laverge and Shirley: Lavergne watched that the capping machine put the bottle tops on correctly, Shirley made sure the contents of the bottle were clear of debris and garbage (besides the garbage beer that was <em>supposed</em> to be in there, that is).</p>
+			
+			<p>So if the idea of OOP is to build hundreds of little objects that all do specific things, won't we suffer from the same complexity we were trying to avoid when just sticking to strict functional programming?  Won't our code just be thousands of little worker bees buzzing around nonsensically?  Well, certainly that's possible.  Writing bad code is *always* a possibility.  The thing is, even bad code is easier to debug when it's broken down into bite-sized chunks - the errors are more specific, the lines are fewer to pick through, the variables are more often than not right in front of your face.</p>
+			
+			<p>Let's take the instance of time as an example. This week I studied up on the Time object in Ruby (everything's an object in Ruby, after all - with various ways to designed to define that object).  Now, consider writing a very simple little calendar-type application.  Let's say we're trying to figure out what phase of a process we're in, which is entirely dependent on the time spent on the process: Stage 1 is the first week, Stage 2 the second, etc.  We have 5 stages.  If I were to write this in functional code, I would probably chose to make a case statement: "if TODAY is during the first week of the process, then we're in Stage 1", "if TODAY is in the second week or the process, Stage 2", etc.  Problem is, how do we define "day"? or "week" for that matter? or "Process"? Many problems and we haven't even gotten a line of actual code on the screen yet! </p>
+			
+			<p>OOP clears this up for us.  If we can define a DAY as "24 hours"(which Ruby already has built-in), and we can define TODAY as "today's date" (again, already built in as an Object), we can then say "a week is comprised of 7 of these 24 hour chunks, of which one may or may not be the one we happen to be in <em>right now</em>." In Ruby, we can write this as:
+				
+<pre><code>
+	today = Time.now
+	first_day_of_process = Time.new(2014, 08, 15) #for August 15, 2014
+	last_day_of_process = Time.new(2015, 1,1) #for Jan 1, 2015
+	(first_day_of_process.to_i..last_day_of_process.to_i).include?(today)
+</code></pre>
+				
+				Simply because Ruby recognizes "Time" as an Object, and because we can feed it a date that it will recognize as a "day"(spans 24 hours, exists on a linear time-scale, etc) we can start building objects that are both functional and interact with other objects in a very readable way. In this case, we are placing the moments of Time on that linear time-scale by asking Time to report itself as an Integer (.to_i).  The Integer Time reports is in terms of <em>how many seconds past Jan 1, 1970</em> (or the Ruby Epoch) it is (don't ask me the significance of this date, I have no clue. They just needed somewhere to mark 0 on the timeline and picked the beginning of the 70s.)</p>
+				
+				<p>The fact is, since our first day on CodeAcademy defining our first variable, we've been taking advantage of Ruby's OOP design.  Actually, even prior to programming we've been playing with OOP concepts.  Have you ever used iTunes? If you have, you probably know about Smart Playlists - which keep an updated list of all sorts of things: the most played songs in your library, recently added, purchased, songs you used to listen to but haven't in a while, etc.  Basically, when you create a Smart Playlist, and give it parameters, you're creating an Object (the Folder itself) with definitions (whatever rules you chose to allow songs to populate it) that interprets (your library doesnt gain or lose songs, just certain songs are allowed into that folder based on your choices, and the attributes of each song in the main Library).  Now, consider iTunes Smart Folders in the context of your if/then statements in Functional Code - you wouldn't want to have to go through each song and figure out IF its a song before 1992 but AFTER 1989, IF it's PUNK or HIP HOP or ROCK, right?  Instead, you build an Object that <em>interprets</em> all that for you!  THAT, to me, is the crux of OOP.  Instead of building tons cyclical logic, build a little machine that you can call to implement that logic for you, over and over and over again!  Which, let's be honest, is what computers are best for...  At least until Joshua becomes sentient :)</p>				
+    </div>
+ </div>
+  <div id="footer">
+    <p>Copyright 2014</p>
+  </div>
+</body>
+</html>
