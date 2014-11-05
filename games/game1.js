@@ -61,12 +61,14 @@ function rotateLeft(){index = position.indexOf(ship.position)
 }
 
 function playGame(){
- prompt("You've chased an asteroid headed for Earth into a Nebula! You're flying blind! Would you like to [Fire, RotateRight, RotateLeft]?", "...")
+ prompt("You've chased an asteroid headed for Earth into a Nebula! You're flying blind! Would you like to [Fire, RotateRight, RotateLeft, Quit]?", "...")
   if ("Fire"){
 	  if (ship.ammo > 0){fireWeapons()}
 	  else {alert("OH NO!  You're out of ammo! The asteroid hurdles to your human colony, which is now doomed. Refresh the browser window to have another chance at life!")}}
   else if ("RotateRight"){rotateRight()}
   else if ("RotateLeft"){rotateLeft()}
+	else if ("Quit")
+		break
   else console.log("That's not one of the options! Think fast, StarFighter!");
 }
 
