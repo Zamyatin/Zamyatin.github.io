@@ -25,7 +25,7 @@ function startShip(){
 function fireWeapons(){
 	if (ship.position === asteroid.position) {alert("That's a HIT!");
 		ship.ammo -= 1;
-		issueDamage()}
+		issueDamage();}
 	else if (ship.position !== asteroid.position) {alert("OH! So close! Sadly, your shot has missed");
 		ship.ammo -=1}
 }
