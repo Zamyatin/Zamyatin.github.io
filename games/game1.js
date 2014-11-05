@@ -67,8 +67,6 @@ function playGame(){
 	  else {alert("OH NO!  You're out of ammo! The asteroid hurdles to your human colony, which is now doomed. Refresh the browser window to have another chance at life!")}}
   else if ("RotateRight"){rotateRight()}
   else if ("RotateLeft"){rotateLeft()}
-	else if ("Quit")
-		break
   else console.log("That's not one of the options! Think fast, StarFighter!");
 }
 
