@@ -1,0 +1,180 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1em/1.38 Helvetica;
+  color: rgb(255, 255, 255);
+}
+
+.csheet {
+  position: absolute;
+  width: 140px;
+  height: 200px;
+  border: 2px solid rgb(0, 0, 0);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  background-color: rgb(222, 222, 222);
+}
+
+.header {
+  font-weight: 400;
+  line-height: 1.38;
+}
+
+.navbuts {
+  position: relative;
+  width: 48%;
+  height: 22px;
+  margin: 187px auto 0;
+}
+
+.navbuts .header {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  height: 22px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: rgb(68, 211, 231);
+  font-size: 1em;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.sheetbody {
+  position: relative;
+  width: 754px;
+  height: 431px;
+  margin: 344px auto 0;
+}
+
+.text {
+  float: left;
+  min-height: 62px;
+  margin: 30px 0 0 52.11589%;
+  padding-left: 11px;
+  font-size: 2.75em;
+  color: rgb(0, 0, 0);
+}
+
+._container {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  z-index: 16;
+  width: 100%;
+  height: 209px;
+  background: url('../images/Cheating.JPG') rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.csheet-1 {
+  top: 231px;
+  left: 82%;
+  z-index: 7;
+  background-image: url('../images/Node-Help-Sheet.jpg');
+}
+
+.csheet-2 {
+  top: 0;
+  left: 82%;
+  z-index: 6;
+  background-image: url('../images/git-cheat-sheet-large.png');
+}
+
+.csheet-3 {
+  top: 231px;
+  left: 54%;
+  z-index: 5;
+  background-image: url('../images/jquery12_colorcharge.png');
+}
+
+.csheet-4 {
+  top: 0;
+  left: 54%;
+  z-index: 4;
+  background-image: url('../images/css-cheat-sheet-v2.png');
+}
+
+.csheet-5 {
+  top: 231px;
+  left: 27%;
+  z-index: 3;
+  background-image: url('../images/javascript-cheat-sheet.jpg');
+}
+
+.csheet-6 {
+  top: 0;
+  left: 27%;
+  z-index: 2;
+  background-image: url('../images/RubyCheat2.png');
+}
+
+.csheet-7 {
+  top: 231px;
+  left: 0;
+  z-index: 1;
+  background-image: url('../images/HTML5_Canvas_Cheat_Sheet.png');
+}
+
+.csheet-8 {
+  top: 0;
+  left: 0;
+  background-image: url('../images/RubyCheat1.png');
+}
+
+.header-2 {
+  right: 0%;
+  z-index: 1;
+  width: 18%;
+  background-image: -webkit-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(74, 185, 47) 100%);
+  background-image:    -moz-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(74, 185, 47) 100%);
+  background-image:      -o-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(74, 185, 47) 100%);
+  background-image:     -ms-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(74, 185, 47) 100%);
+  background-image:         linear-gradient(360deg, rgb(255, 255, 255) 0%, rgb(74, 185, 47) 100%);
+}
+
+.header-3 {
+  right: 40%;
+  z-index: 1;
+  width: 18%;
+  background-image: -webkit-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(18, 112, 236) 100%);
+  background-image:    -moz-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(18, 112, 236) 100%);
+  background-image:      -o-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(18, 112, 236) 100%);
+  background-image:     -ms-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(18, 112, 236) 100%);
+  background-image:         linear-gradient(360deg, rgb(255, 255, 255) 0%, rgb(18, 112, 236) 100%);
+}
+
+.header-4 {
+  right: 60%;
+  z-index: 1;
+  width: 18%;
+  background-image: -webkit-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(151, 4, 195) 100%);
+  background-image:    -moz-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(151, 4, 195) 100%);
+  background-image:      -o-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(151, 4, 195) 100%);
+  background-image:     -ms-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(151, 4, 195) 100%);
+  background-image:         linear-gradient(360deg, rgb(255, 255, 255) 0%, rgb(151, 4, 195) 100%);
+}
+
+.header-5 {
+  right: 80%;
+  z-index: 1;
+  width: 18%;
+  background-image: -webkit-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(236, 18, 90) 100%);
+  background-image:    -moz-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(236, 18, 90) 100%);
+  background-image:      -o-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(236, 18, 90) 100%);
+  background-image:     -ms-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(236, 18, 90) 100%);
+  background-image:         linear-gradient(360deg, rgb(255, 255, 255) 0%, rgb(236, 18, 90) 100%);
+}
+
+.header-6 {
+  right: 20%;
+  z-index: 1;
+  width: 18%;
+  background-image: -webkit-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(68, 211, 231) 100%);
+  background-image:    -moz-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(68, 211, 231) 100%);
+  background-image:      -o-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(68, 211, 231) 100%);
+  background-image:     -ms-linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(68, 211, 231) 100%);
+  background-image:         linear-gradient(360deg, rgb(255, 255, 255) 0%, rgb(68, 211, 231) 100%);
+}
